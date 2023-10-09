@@ -64,7 +64,7 @@ if (carta1.texto + carta2.texto === 21) {
   console.log('Fim de jogo')
  }
 
-}
+  }
 
 
  
