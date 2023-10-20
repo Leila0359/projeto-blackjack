@@ -14,8 +14,8 @@
 
    console.log("Iniciando o jogo Blackjack!")
 
-    if (confirm("Suas cartas são A♥️ J♣️. A carta revelada do computador é 4♣️.")){
-    }
+    confirm('Quer iniciar uma nova rodada?')
+    
   
    const valores = ['A', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,'j', 'Q ', 'K'];
    const naipes = ['copas', 'paus', 'ouros', 'espadas'];
@@ -24,15 +24,17 @@
   
    // 1-  Verifica se a carta inicial do usuario e Ases?;
    
-    const cartaAleatoriaJogador1 =('A♥️');
-    const cartaAleatoriaJogador2 = ('J♣️');
+    const temParDeA = [];
+   // const cartaAleatoriaJogador2 = ('J♣️');
     
 
-    if (cartaAleatoriaJogador1 === "A" & cartaAleatoriaJogador2 === "A" === 'true') {
-        console.log('As duas cartas iniciais continuam sendo Ases')
+   // if (cartaAleatoriaJogador1 === "A" & cartaAleatoriaJogador2 === "A" === 'true') {
+       // console.log('As duas cartas iniciais continuam sendo Ases')
       
-     } else {
-       console.log('As duas cartas iniciais não são Ases. Vamos sortear novamente:', true)
+       if (temParDeA === 11){
+        console.log('A primeira mão contem um par de A');
+     } else { ('A primeira mão não contem um par de A, pode continuar o jogo!');
+       console.log('Insira o numero par!');
      }
        console.log ('As cartas sorteadas do jogador foram:', cartaAleatoriaJogador1, 'e', cartaAleatoriaJogador2); 
     
