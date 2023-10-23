@@ -12,59 +12,58 @@
  */ 
   console.log('Boas vindas ao jogo de BlackJack!')
 
- const iniciarRodada = prompt ('Quer iniciar uma nova rodada?')
-  if (confirm (iniciarRodada === 'false')) {
-   console.log("terminou o jogo");
-   
-  } else if(confirm (iniciarRodada === 'true')){
-   console.log("comecou novo jogo");
+  const iniciarRodada = confirm('Quer iniciar uma nova rodada?');
+  if (iniciarRodada){
+   console.log('Começou o jogo!');
+  
 
-   
    const cartasENumeros = ['A', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'j', 'Q', 'K']
    const naipesBaralho = ['copas', 'paus', 'ouro', 'espadas']
    
    
-   const primeiraMao = []
-   const temParDeA = []
-
-   if (temParDeA === 11) {
-    console.log('A primmeira mao contem um par de A');
-    
-   } else {
-    console.log('A primeira mao não contem par de A, pode continuar o jogo!');
-    console.log('Insira o numero par!');
-    
-   }
-
+  const primeiraMao = [];
+  const temParDeA = false;
   
-  const jogador1 = 'usuario'
-  const carta1 = comprarCarta()
-  const carta2 = comprarCarta()
-
-  console.log(jogador1);
-  console.log('carta1:', carta1.texto + 'carta2:', carta2.texto);
-
-
-  const jogador2 = 'computador'
-  const carta3 = comprarCarta()
-  const carta4 = comprarCarta()
-
-console.log(jogador2);
-console.log('carta3:', carta3.texto + 'carta4:', carta4.texto);
-
-
-if (carta1.texto + carta2.texto === 21) {
-  console.log('${usuario}, venceu!');
   
-} else if (carta3.texto + carta4.texto === 21){
- console.log('${computador} venceu'); 
-  
- } else if (carta1.texto + carta2.texto < carta3.texto + carta4.texto){
-  console.log(" Computador, ganhouuu")
-  console.log('Fim de jogo')
- }
-
+ if (primeiraMao.length === 0 && primeiraMao[0] === 'A' && primeiraMao[1] === 'A') {
+    temParDeA = true;
+    console.log('A primeira contém um par de As');
+  } else {
+    console.log('A primeira mão não contém um par de As, pode continuar o jogo!');
+    console.log('Insira o número par!');
   }
+
+  const jogador1 = 'Usuário';
+  const carta1 = comprarCarta();
+  const carta2 = comprarCarta();
+
+  console.log(`${jogador1}- cartas : ${carta1.texto} ${carta2.texto} pontuação = ${carta1.valor + carta2.valor}`);
+  
+
+  const jogador2 = 'Computador';
+  const carta3 = comprarCarta();
+  const carta4 = comprarCarta();
+
+  console.log(jogador2);
+  console.log(`${jogador2}- cartas : ${carta3.texto} ${carta4.texto} pontuação = ${carta3.valor + carta4.valor}`);
+
+  if (carta1.valor + carta2.valor === carta3.valor + carta4.valor) {
+    console.log('Houve um empate');
+
+  } else if (carta1.valor + carta2.valor < carta3.valor + carta4.valor) {
+    console.log(`${jogador2} venceu essa rodada`);
+
+  } else if (carta1.valor + carta2.valor === 21) {
+    console.log(`O ${jogador1} venceu a partida`);
+     
+  } else if (carta3.valor + carta4.valor === 21)
+   console.log(`O ${jogador2} venceu a partida`)
+
+  console.log('Fim de jogo');
+}
+   
+    
+  
 
 
  
